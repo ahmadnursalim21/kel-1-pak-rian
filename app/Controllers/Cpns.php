@@ -16,6 +16,10 @@ class Cpns extends BaseController
     {
         return view('cpns/daftar_formasi_makanan');
     }
+    public function formasi_cpns_s1_pendidikan_kepelatihan_keolahragaan(): string
+    {
+        return view('cpns/daftar_formasi_cpns_keolahragaan');
+    }
     public function daftar_formasi_cpns_s1_teknik_bangunan(): string
     {
         return view('cpns/daftar_formasi_cpns_s1_bangunan');

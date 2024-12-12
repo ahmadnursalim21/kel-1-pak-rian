@@ -9,15 +9,15 @@
     <link rel="shortcut icon" type="image/png" href="/favicon.ico">
     <link rel="stylesheet" href="<?= base_url('bootstrap/dist/css/bootstrap.css') ?>">
     <style>
-        .card-text {
-            color: #007bff;
-        }
+    .card-text {
+        color: #007bff;
+    }
 
-        .img-card {
-            width: 350px;
-            object-fit: cover;
-            height: 350px;
-        }
+    .img-card {
+        width: 350px;
+        object-fit: cover;
+        height: 350px;
+    }
     </style>
 </head>
 
@@ -298,7 +298,8 @@
                             </div>
                             <p>Pemerintah resmi membuka jutaan formasi pada Rekrutmen (Calon Pegawai Negeri Sipil) CPNS
                                 dan (Pegawai Pemerintah..</p>
-                            <a href="<?= base_url('pola-soal-cpns-2024') ?>">Read More</a>
+                            <a href="<?= base_url('formasi-cpns-s1-pendidikan-kepelatihan-keolahragaan') ?>">Read
+                                More</a>
                         </div>
                     </div>
                 </div>
