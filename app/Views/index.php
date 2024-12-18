@@ -10,18 +10,204 @@
 
     <link rel="stylesheet" href="<?= base_url('bootstrap/dist/css/bootstrap.css') ?>">
     <style>
-    .navbar {
-        z-index: 100;
-        margin-bottom: 200px;
-    }
+        .navbar {
+            z-index: 100;
+            margin-bottom: 200px;
+        }
 
-    .hero {
-        margin-top: 100px;
-    }
+        .hero {
+            margin-top: 100px;
+        }
 
-    .gambar {
-        width: 150px;
-    }
+        .feature-card {
+            background-color: #f8f9ff;
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background-color: white;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-icon img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .feature-title {
+            font-weight: bold;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .feature-text {
+            color: #555;
+            font-size: 0.9rem;
+        }
+
+        .price-card {
+            border: none;
+            border-radius: 16px;
+            box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            margin-bottom: 30px;
+        }
+
+        .price-card img {
+            width: 100%;
+            max-width: 300px;
+            margin: auto;
+        }
+
+        .price-card h5 {
+            color: #666;
+            margin: 15px 0 10px;
+        }
+
+        .price-card .price {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .price-card .price .old-price {
+            text-decoration: line-through;
+            color: #666;
+        }
+
+        .price-card .new-price {
+            font-size: 2rem;
+            color: #3258e9;
+        }
+
+        .btn-primary {
+            background-color: #3258e9;
+            border: none;
+            border-radius: 25px;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background-color: #2747c9;
+        }
+
+        .gambar {
+            width: 150px;
+        }
+
+        .carousel-item img {
+            max-height: 500px;
+            object-fit: contain;
+            margin: 0 auto;
+        }
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-color: black;
+            border-radius: 50%;
+        }
+
+
+        .testimonial-card {
+            background-color: #fff;
+            border-radius: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            margin: 15px;
+        }
+
+        .profile-pic {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            border: 5px solid #f0f0f0;
+        }
+
+        .stars {
+            color: gold;
+            margin-top: 5px;
+        }
+
+        .quote {
+            font-size: 18px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .sub-title {
+            font-size: 14px;
+            color: #2a75e0;
+            margin-bottom: 10px;
+        }
+
+        .text-description {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .icon-heart {
+            color: #000;
+            margin-right: 5px;
+        }
+
+
+        /* footer */
+        footer {
+            background-color: #f9f9f9;
+            padding: 30px 0;
+            color: #333;
+        }
+
+        .footer-logo {
+            width: 150px;
+        }
+
+        .footer-title {
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .footer-social a {
+            margin: 0 10px;
+            color: #333;
+            font-size: 20px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-social a:hover {
+            color: #007bff;
+        }
+
+        .footer-links a {
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #007bff;
+        }
     </style>
 </head>
 
@@ -75,7 +261,7 @@
                             pengguna)</p>
                     </div>
                     <div class="col-sm-12 col-md-6">
-                        <img src="<?= base_url('images/Mockup-HP-2.webp') ?>" alt="App Preview" class="img-fluid">
+                        <img src="<?= base_url('images/1-hero.png') ?>" alt="App Preview" class="img-fluid gambarHp">
                     </div>
                 </div>
             </div>
@@ -93,65 +279,57 @@
                     PKN
                     STAN, IPDN, POLRI, Kedinasan Lain, sampai dengan lulus CPNS? </b></p>
         </div>
-        <div class="container">
-            <div class="d-flex gap-2 flex-column flex-md-row">
-                <div class="card">
-                    <div class="d-block">
-                        <div>
-                            <img src="https://i.pinimg.com/736x/5d/f4/18/5df418287735c4bc97bc8e4100d0a451.jpg"
-                                class="card-img-top" alt="...">
+        <div class="container my-5">
+            <div class="row justify-content-center">
+                <!-- Card 1 -->
+                <div class="col-md-3 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <img src="https://img.icons8.com/fluency/48/lock.png" alt="Lock Icon">
                         </div>
-                        <div class="card-body">
-                            <p class="card-text">Some quick example text to build on the card title and make up the
-                                bulk
-                                of
-                                the
-                                card's content.</p>
+                        <div class="feature-title">Secret Formula</div>
+                        <div class="feature-text">
+                            Kami mempunyai secret formula dalam memecahkan soal berbasis trik cepat dan pendalaman
+                            konsep.
                         </div>
                     </div>
                 </div>
-                <div class="card">
-                    <div class="d-block">
-                        <div>
-                            <img src="https://i.pinimg.com/736x/5d/f4/18/5df418287735c4bc97bc8e4100d0a451.jpg"
-                                class="card-img-top" alt="...">
+                <!-- Card 2 -->
+                <div class="col-md-3 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <img src="https://img.icons8.com/fluency/48/computer.png" alt="Computer Icon">
                         </div>
-                        <div class="card-body">
-                            <p class="card-text">Some quick example text to build on the card title and make up the
-                                bulk
-                                of
-                                the
-                                card's content.</p>
+                        <div class="feature-title">Learning App</div>
+                        <div class="feature-text">
+                            Kami menggunakan teknologi tinggi untuk menunjang proses pembelajaran, latihan, dan
+                            evaluasi.
                         </div>
                     </div>
                 </div>
-                <div class="card">
-                    <div class="d-block">
-                        <div>
-                            <img src="https://i.pinimg.com/736x/5d/f4/18/5df418287735c4bc97bc8e4100d0a451.jpg"
-                                class="card-img-top" alt="...">
+                <!-- Card 3 -->
+                <div class="col-md-3 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <img src="https://img.icons8.com/fluency/48/positive-dynamic.png" alt="Chart Icon">
                         </div>
-                        <div class="card-body">
-                            <p class="card-text">Some quick example text to build on the card title and make up the
-                                bulk
-                                of
-                                the
-                                card's content.</p>
+                        <div class="feature-title">Evaluasi</div>
+                        <div class="feature-text">
+                            Evaluasi secara realtime dapat diakses melalui learning app untuk mengukur sejauh mana
+                            tingkat pemahaman pada suatu materi.
                         </div>
                     </div>
                 </div>
-                <div class="card">
-                    <div class="d-block">
-                        <div>
-                            <img src="https://i.pinimg.com/736x/5d/f4/18/5df418287735c4bc97bc8e4100d0a451.jpg"
-                                class="card-img-top" alt="...">
+                <!-- Card 4 -->
+                <div class="col-md-3 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <img src="https://img.icons8.com/fluency/48/play.png" alt="Play Icon">
                         </div>
-                        <div class="card-body">
-                            <p class="card-text">Some quick example text to build on the card title and make up the
-                                bulk
-                                of
-                                the
-                                card's content.</p>
+                        <div class="feature-title">Video Belajar</div>
+                        <div class="feature-text">
+                            Rasakan belajar lebih efektif dan interaktif dengan video belajar tiap sub bab pada learning
+                            app Apta School.
                         </div>
                     </div>
                 </div>
@@ -174,153 +352,134 @@
             </p>
         </div>
 
-        <div class="container d-grid">
-            <div class="row gap-2 justify-content-center">
-                <div class="col col-1 col-sm-3">
-                    <div class="card">
-                        <div class="d-block">
-                            <div>
-                                <img src="https://i.pinimg.com/736x/5d/f4/18/5df418287735c4bc97bc8e4100d0a451.jpg"
-                                    class="card-img-top" alt="...">
-                            </div>
-                            <div class="card-body">
-                                <p class="card-text">Bimbel Online CPNS</p>
-                                <h2>Rp699.000 Rp149rb</h2>
-                                <p>Paket 1 Tahun</p>
-                                <ul>
-                                    <li>Mentoring Setiap Hari</li>
-                                    <li>50+ Try Out SKD Sistem CAT</li>
-                                    <li>Video Pembelajaran Tiap Sub Bab</li>
-                                    <li>Fitur Lengkap Lainnya</li>
-                                </ul>
-                            </div>
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <!-- Card Loop (7 Cards) -->
+                <!-- 1 -->
+                <div class="col-md-4 col-lg-3">
+                    <div class="card price-card">
+                        <img src="<?= base_url('images/1-bimbel-cpns.png') ?>" alt="Bimbel CPNS">
+                        <h5>Bimbel Online CPNS</h5>
+                        <div class="price">
+                            <span class="old-price">Rp699.000</span>
+                            <div class="new-price">Rp149rb</div>
                         </div>
+                        <p class="text-muted mb-1">Paket 1 Tahun</p>
+                        <ul class="list-unstyled my-3">
+                            <li>Mentoring Setiap Hari</li>
+                            <li>50+ Try Out SKD Sistem CAT</li>
+                            <li>Video Pembelajaran Tiap Sub Bab</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary">SELENGKAPNYA</a>
                     </div>
                 </div>
-                <div class="col col-1 col-sm-3">
-                    <div class="card">
-                        <div class="d-block">
-                            <div>
-                                <img src="https://i.pinimg.com/736x/5d/f4/18/5df418287735c4bc97bc8e4100d0a451.jpg"
-                                    class="card-img-top" alt="...">
-                            </div>
-                            <div class="card-body">
-                                <p class="card-text">Bimbel Online CPNS</p>
-                                <h2>Rp699.000 Rp149rb</h2>
-                                <p>Paket 1 Tahun</p>
-                                <ul>
-                                    <li>Mentoring Setiap Hari</li>
-                                    <li>50+ Try Out SKD Sistem CAT</li>
-                                    <li>Video Pembelajaran Tiap Sub Bab</li>
-                                    <li>Fitur Lengkap Lainnya</li>
-                                </ul>
-                            </div>
+                <!-- Card diulang hingga 7 -->
+                <!-- 2 -->
+                <div class="col-md-4 col-lg-3">
+                    <div class="card price-card">
+                        <img src="<?= base_url('images/2-bimbel-pppk.png') ?>" alt="Bimbel CPNS">
+                        <h5>Bimbel Online CPNS</h5>
+                        <div class="price">
+                            <span class="old-price">Rp699.000</span>
+                            <div class="new-price">Rp149rb</div>
                         </div>
+                        <p class="text-muted mb-1">Paket 1 Tahun</p>
+                        <ul class="list-unstyled my-3">
+                            <li>Mentoring Setiap Hari</li>
+                            <li>50+ Try Out SKD Sistem CAT</li>
+                            <li>Video Pembelajaran Tiap Sub Bab</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary">SELENGKAPNYA</a>
                     </div>
                 </div>
-                <div class="col col-1 col-sm-3">
-                    <div class="card">
-                        <div class="d-block">
-                            <div>
-                                <img src="https://i.pinimg.com/736x/5d/f4/18/5df418287735c4bc97bc8e4100d0a451.jpg"
-                                    class="card-img-top" alt="...">
-                            </div>
-                            <div class="card-body">
-                                <p class="card-text">Bimbel Online CPNS</p>
-                                <h2>Rp699.000 Rp149rb</h2>
-                                <p>Paket 1 Tahun</p>
-                                <ul>
-                                    <li>Mentoring Setiap Hari</li>
-                                    <li>50+ Try Out SKD Sistem CAT</li>
-                                    <li>Video Pembelajaran Tiap Sub Bab</li>
-                                    <li>Fitur Lengkap Lainnya</li>
-                                </ul>
-                            </div>
+                <!-- 3 -->
+                <div class="col-md-4 col-lg-3">
+                    <div class="card price-card">
+                        <img src="<?= base_url('images/3-bimbel-kedinasan.png') ?>" alt="Bimbel CPNS">
+                        <h5>Bimbel Online CPNS</h5>
+                        <div class="price">
+                            <span class="old-price">Rp699.000</span>
+                            <div class="new-price">Rp149rb</div>
                         </div>
+                        <p class="text-muted mb-1">Paket 1 Tahun</p>
+                        <ul class="list-unstyled my-3">
+                            <li>Mentoring Setiap Hari</li>
+                            <li>50+ Try Out SKD Sistem CAT</li>
+                            <li>Video Pembelajaran Tiap Sub Bab</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary">SELENGKAPNYA</a>
                     </div>
                 </div>
-                <div class="col col-1 col-sm-3">
-                    <div class="card">
-                        <div class="d-block">
-                            <div>
-                                <img src="https://i.pinimg.com/736x/5d/f4/18/5df418287735c4bc97bc8e4100d0a451.jpg"
-                                    class="card-img-top" alt="...">
-                            </div>
-                            <div class="card-body">
-                                <p class="card-text">Bimbel Online CPNS</p>
-                                <h2>Rp699.000 Rp149rb</h2>
-                                <p>Paket 1 Tahun</p>
-                                <ul>
-                                    <li>Mentoring Setiap Hari</li>
-                                    <li>50+ Try Out SKD Sistem CAT</li>
-                                    <li>Video Pembelajaran Tiap Sub Bab</li>
-                                    <li>Fitur Lengkap Lainnya</li>
-                                </ul>
-                            </div>
+                <!-- 4 -->
+                <div class="col-md-4 col-lg-3">
+                    <div class="card price-card">
+                        <img src="<?= base_url('images/4-bimbel-BUMN.png') ?>" alt="Bimbel CPNS">
+                        <h5>Bimbel Online CPNS</h5>
+                        <div class="price">
+                            <span class="old-price">Rp699.000</span>
+                            <div class="new-price">Rp149rb</div>
                         </div>
+                        <p class="text-muted mb-1">Paket 1 Tahun</p>
+                        <ul class="list-unstyled my-3">
+                            <li>Mentoring Setiap Hari</li>
+                            <li>50+ Try Out SKD Sistem CAT</li>
+                            <li>Video Pembelajaran Tiap Sub Bab</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary">SELENGKAPNYA</a>
                     </div>
                 </div>
-                <div class="col col-1 col-sm-3">
-                    <div class="card">
-                        <div class="d-block">
-                            <div>
-                                <img src="https://i.pinimg.com/736x/5d/f4/18/5df418287735c4bc97bc8e4100d0a451.jpg"
-                                    class="card-img-top" alt="...">
-                            </div>
-                            <div class="card-body">
-                                <p class="card-text">Bimbel Online CPNS</p>
-                                <h2>Rp699.000 Rp149rb</h2>
-                                <p>Paket 1 Tahun</p>
-                                <ul>
-                                    <li>Mentoring Setiap Hari</li>
-                                    <li>50+ Try Out SKD Sistem CAT</li>
-                                    <li>Video Pembelajaran Tiap Sub Bab</li>
-                                    <li>Fitur Lengkap Lainnya</li>
-                                </ul>
-                            </div>
+                <!-- 5 -->
+                <div class="col-md-4 col-lg-3">
+                    <div class="card price-card">
+                        <img src="<?= base_url('images/5-bimbel-POLRI.png') ?>" alt="Bimbel CPNS">
+                        <h5>Bimbel Online CPNS</h5>
+                        <div class="price">
+                            <span class="old-price">Rp699.000</span>
+                            <div class="new-price">Rp149rb</div>
                         </div>
+                        <p class="text-muted mb-1">Paket 1 Tahun</p>
+                        <ul class="list-unstyled my-3">
+                            <li>Mentoring Setiap Hari</li>
+                            <li>50+ Try Out SKD Sistem CAT</li>
+                            <li>Video Pembelajaran Tiap Sub Bab</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary">SELENGKAPNYA</a>
                     </div>
                 </div>
-                <div class="col col-1 col-sm-3">
-                    <div class="card">
-                        <div class="d-block">
-                            <div>
-                                <img src="https://i.pinimg.com/736x/5d/f4/18/5df418287735c4bc97bc8e4100d0a451.jpg"
-                                    class="card-img-top" alt="...">
-                            </div>
-                            <div class="card-body">
-                                <p class="card-text">Bimbel Online CPNS</p>
-                                <h2>Rp699.000 Rp149rb</h2>
-                                <p>Paket 1 Tahun</p>
-                                <ul>
-                                    <li>Mentoring Setiap Hari</li>
-                                    <li>50+ Try Out SKD Sistem CAT</li>
-                                    <li>Video Pembelajaran Tiap Sub Bab</li>
-                                    <li>Fitur Lengkap Lainnya</li>
-                                </ul>
-                            </div>
+                <!-- 6 -->
+                <div class="col-md-4 col-lg-3">
+                    <div class="card price-card">
+                        <img src="<?= base_url('images/6-bimbel-PSIKOTES.png') ?>" alt="Bimbel CPNS">
+                        <h5>Bimbel Online CPNS</h5>
+                        <div class="price">
+                            <span class="old-price">Rp699.000</span>
+                            <div class="new-price">Rp149rb</div>
                         </div>
+                        <p class="text-muted mb-1">Paket 1 Tahun</p>
+                        <ul class="list-unstyled my-3">
+                            <li>Mentoring Setiap Hari</li>
+                            <li>50+ Try Out SKD Sistem CAT</li>
+                            <li>Video Pembelajaran Tiap Sub Bab</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary">SELENGKAPNYA</a>
                     </div>
                 </div>
-                <div class="col col-1 col-sm-3">
-                    <div class="card">
-                        <div class="d-block">
-                            <div>
-                                <img src="https://i.pinimg.com/736x/5d/f4/18/5df418287735c4bc97bc8e4100d0a451.jpg"
-                                    class="card-img-top" alt="...">
-                            </div>
-                            <div class="card-body">
-                                <p class="card-text">Bimbel Online CPNS</p>
-                                <h2>Rp699.000 Rp149rb</h2>
-                                <p>Paket 1 Tahun</p>
-                                <ul>
-                                    <li>Mentoring Setiap Hari</li>
-                                    <li>50+ Try Out SKD Sistem CAT</li>
-                                    <li>Video Pembelajaran Tiap Sub Bab</li>
-                                    <li>Fitur Lengkap Lainnya</li>
-                                </ul>
-                            </div>
+                <!-- 7 -->
+                <div class="col-md-4 col-lg-3">
+                    <div class="card price-card">
+                        <img src="<?= base_url('images/7-bimbel-UTBK.png') ?>" alt="Bimbel CPNS">
+                        <h5>Bimbel Online CPNS</h5>
+                        <div class="price">
+                            <span class="old-price">Rp699.000</span>
+                            <div class="new-price">Rp149rb</div>
                         </div>
+                        <p class="text-muted mb-1">Paket 1 Tahun</p>
+                        <ul class="list-unstyled my-3">
+                            <li>Mentoring Setiap Hari</li>
+                            <li>50+ Try Out SKD Sistem CAT</li>
+                            <li>Video Pembelajaran Tiap Sub Bab</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary">SELENGKAPNYA</a>
                     </div>
                 </div>
             </div>
@@ -337,6 +496,43 @@
                 Bimbel Apta School</h1>
             <p>Tampilan Learning App Apta School yang menjadi teman belajar hebat kamu</p>
         </div>
+
+        <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <!-- Slide 1 -->
+                <div class="carousel-item active">
+                    <img src="<?= base_url('images/1-sc.png') ?>" class="d-block w-100" alt="Slide 1">
+                </div>
+                <!-- Duplicate Slide 2 for demonstration -->
+                <div class="carousel-item">
+                    <img src="<?= base_url('images/2-sc.png') ?>" class="d-block w-100" alt="Slide 2">
+                </div>
+                <!-- Duplicate Slide 3 for demonstration -->
+                <div class="carousel-item">
+                    <img src="<?= base_url('images/3-sc.png') ?>" class="d-block w-100" alt="Slide 3">
+                </div>
+            </div>
+
+            <!-- Carousel Controls -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#imageCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#imageCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+
+            <!-- Carousel Indicators -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#imageCarousel" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#imageCarousel" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#imageCarousel" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+        </div>
     </section>
 
     <section class="container">
@@ -345,85 +541,103 @@
             <h1>Respon positif pengguna Bimbel Apta School</h1>
             <p>Respon ❤ dari pengguna setia Bimbel Apta School</p>
         </div>
-        <div class="card-container">
 
-            <div class="card">
-                <img src="https://i.pinimg.com/736x/5d/f4/18/5df418287735c4bc97bc8e4100d0a451.jpg" width="100"
-                    height="100" alt="Icone Formula">
-                <h1>Vidio Belajar</h1>
-                <p>Rasakan belajar lebih efektif dan interaktif dengan video belajar tiap sub bab pada learning app
-                    Apta
-                    School.</p>
+
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <!-- Card 1 -->
+                <div class="col-md-5">
+                    <div class="testimonial-card">
+                        <img src="<?= base_url('images/woman-1.png') ?>" alt="Profile Picture" class="profile-pic">
+                        <div class="quote">Puteri Adhelia Sandha</div>
+                        <div class="sub-title">Lulus CPNS 2019</div>
+                        <p class="text-description">
+                            Alhamdulillah saya merasa sangat dipandu dengan baik dan benar tanpa suatu kekurangan
+                            apapun.
+                            Usaha memang tidak akan mengkhianati hasil, APTASCHOOL membantu saya dengan sangat baik.
+                            Semoga kedepannya Apda bisa sukses selalu.
+                        </p>
+                        <div>
+                            <i class="fa fa-heart icon-heart"></i><i class="fa fa-heart icon-heart"></i>
+                        </div>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="col-md-5">
+                    <div class="testimonial-card">
+                        <img src="<?= base_url('images/young-man.png') ?>" alt="Profile Picture" class="profile-pic">
+                        <div class="quote">Sindy Izza K</div>
+                        <div class="sub-title">Lulus Kedinasan 2020</div>
+                        <p class="text-description">
+                            Terimakasih Apda School, soal latihan yang diberikan sangat membantu dalam proses belajar
+                            dan lengkap beserta pembahasannya. Admin yang ramah selalu membantu menjawab pertanyaan.
+                        </p>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <div class="container">
-        <footer class="py-5">
+    <!-- footer -->
+
+    <footer>
+        <div class="container">
             <div class="row">
-                <div class="col-6 col-md-2 mb-3">
-                    <h5>Section</h5>
-                    <ul class="nav flex-column">
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
-                    </ul>
+                <!-- Informasi Sekolah -->
+                <div class="col-md-4 mb-4">
+                    <img src="<?= base_url('images/logo.png') ?>" alt="Apta School Logo" class="footer-logo mb-3">
+                    <h5 class="footer-title">Apta School</h5>
+                    <p>
+                        Kotabumi Kota RT/RW 006/003<br>
+                        Kel. Sindang Sari, Kec. Kotabumi,<br>
+                        Kab. Lampung Utara, Lampung, 54316<br>
+                        Indonesia
+                    </p>
+                    <p>
+                        <i class="fas fa-phone-alt"></i> +62 851-4309-3323<br>
+                        <i class="fas fa-envelope"></i> <a href="mailto:admin@aptaschool.com"
+                            class="text-decoration-none">admin@aptaschool.com</a>
+                    </p>
                 </div>
-
-                <div class="col-6 col-md-2 mb-3">
-                    <h5>Section</h5>
-                    <ul class="nav flex-column">
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
-                    </ul>
+                <!-- Sosial Media -->
+                <div class="col-md-4 mb-4 text-center">
+                    <h5 class="footer-title">Ikuti Apta School via sosial media</h5>
+                    <div class="footer-social mt-3">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
                 </div>
-
-                <div class="col-6 col-md-2 mb-3">
-                    <h5>Section</h5>
-                    <ul class="nav flex-column">
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
-                    </ul>
-                </div>
-
-                <div class="col-md-5 offset-md-1 mb-3">
-                    <form>
-                        <h5>Subscribe to our newsletter</h5>
-                        <p>Monthly digest of what's new and exciting from us.</p>
-                        <div class="d-flex flex-column flex-sm-row w-100 gap-2">
-                            <label for="newsletter1" class="visually-hidden">Email address</label>
-                            <input id="newsletter1" type="text" class="form-control" placeholder="Email address"
-                                fdprocessedid="1216">
-                            <button class="btn btn-primary" type="button" fdprocessedid="wgfhhdb">Subscribe</button>
-                        </div>
-                    </form>
+                <!-- Privacy Policy dan Terms -->
+                <div class="col-md-4 mb-4 text-end">
+                    <h5 class="footer-title">Informasi</h5>
+                    <div class="footer-links">
+                        <p><a href="#">Privacy Policy</a></p>
+                        <p><a href="#">Terms and Conditions</a></p>
+                    </div>
                 </div>
             </div>
-
-            <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
-                <p>© 2024 Company, Inc. All rights reserved.</p>
-                <ul class="list-unstyled d-flex">
-                    <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24">
-                                <use xlink:href="#twitter"></use>
-                            </svg></a></li>
-                    <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24">
-                                <use xlink:href="#instagram"></use>
-                            </svg></a></li>
-                    <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24">
-                                <use xlink:href="#facebook"></use>
-                            </svg></a></li>
-                </ul>
+            <hr>
+            <!-- Copyright -->
+            <div class="text-center">
+                <small>&copy; 2024 Apta School. All rights reserved.</small>
             </div>
-        </footer>
-    </div>
+        </div>
+    </footer>
     <script src="<?= base_url('bootstrap/dist/js/bootstrap.js') ?>"></script>
 </body>
 
